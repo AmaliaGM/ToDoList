@@ -1,15 +1,7 @@
 import _ from 'lodash';
 import 'style.css';
-import addElement from './print.js'
+import printMe from './print.js';
 
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
  
 let list = document.querySelector('myList');
 list.addEventListener('click', (e) => {
