@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
    <title>ToDoList</title>
-   <link rel="stylesheet" href="style.css">
-   <script src="./print.bundle.js"></script>
+   <link rel="stylesheet" href="./style.css">
+   <script defer src="/dist/index.bundle.js"></script>
   </head>
   <body>
-    <div id="container" class="list">
-        <h1>To Do List</h1>
-        <input type="text" id="chore" placeholder="chore">
-        <span onclick="addElement()" class="addButton">To do</span>
-    </div>
-    <ul id="myList">
-        <li>Whash dishes</li>
-        <li>Study Themes</li>
-        <li>Buy Milk</li>    
-    </ul>
-   <script src="./index.bundle.js"></script>
+    <h3 class="form-title">To Do List</h3>
+    <form id="todoForm" class="form">
+      <input id="todoInput" type="text" placeholder="chore">
+
+      
+      <button id="add" type="button" onclick="todoList()">Add</button>
+     </form>
+      <ul id="todoList">
+
+      </ul>
   </body>
 </html>

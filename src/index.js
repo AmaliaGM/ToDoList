@@ -1,39 +1,87 @@
-import _ from 'lodash';
-import 'style.css';
-import printMe from './print.js';
+/* import _ from 'lodash'; */
+/* import printMe from './print.js';
+ */
+function todoList() {
+  let item = document.getElementById('todoInput.value')
+  let text = document.createTextNode(item);
+  let newItem = document.createElement('li');
+  newItem.appendChild(text);
+  document.getElementById('todoList').appendChild(newItem);
+}
+/* let container = document.querySelector('#chores')
+let bigContainer = document.querySelector('#itemForm')
+let chores = {
+  selectElements: function() {
+    this.choreInput = document.getElementById('itemInput');
+    this.choresList = document.getElementById('choresList');
+    this.choresListChildren = this.choresList.children;
+    this.addButton = document.getElementById('add');
+    this.errorMessage = document.getElementById('error');
+   
+  },
+  buildChore: function() {
+    let choresListItem; let choresCheckbox; let choresValue; let choresButton; let choresTrash;
+    choresListItem = document.createElement('li');
+    choresListItem.setAtribute('class', 'chore');
 
- 
-let list = document.querySelector('myList');
-list.addEventListener('click', (e) => {
- if(e.target.tagName === 'li') {
-   e.target.classList.toogle('checked');
- }
-}, false);
+    choresCheckbox = document.createElement('input');
+    choresCheckbox.classList = 'checkbox';
+    choresCheckbox.setAttribute('type', 'checkbox');
+    choresValue = document.createTextNode(this.choreInput.value);
+    choresButton = document.createElement('button');
+    choresTrash = document.createElement('i');
+    choresTrash.setAttribute('class', 'fa fa-trash');
+    trashButton.appendChild(choresTrash);
+    choresListItem.appendChild(choresCheckbox);
+    choresListItem.appendChild(choresValue);
+    choresListItem.appendChild(choresButton);
 
-function newItem() {
- let li = document.createElement('li');
- let input = document.getElementById('myInput').value;
- let letter = document.createTextNode(input);
- li.appendChild(letter);
- if (input === '') {
-   alert('Please type some text');
- } else {
-   document.getElementById('myList').appendChild(li);
- }
- document.getElementById('chore').value = '';
+    this.choresList.appendChild(choresListItem);
+  },
 
- let itemCont = document.createElement('span');
- let text = document.createTextNode('u0007');
- itemCont.className = 'close';
- itemCont.appendChild(text);
- li.appendChild(span);
 
- for (let i = 0; i < close.length; i++) {
-     close[i].onclick = function() {
-       let div = this.parentElement;
-       div.style.display = 'none';
-     }
- }
+};
+chores[this.choresList] = container.children;
+chores[this.choreInput] = container.children;
+chores[this.addButton] = container.children;
+bigContainer.appendChild(container);
+for (var i = 0; i < localStorage.length; i++) {
+         apendItem (localStorage.key(i), localStorage.getItem(localStorage.key(i)));
+} */
+ /* function itemID() {
+  let previousID = JSON.parse(localStorage.getItem('itemID'));
+  const newID = previousID + 1;
+  if (previousID == null) {
+    previousID = 1;
+    localStorage.setItem('itemID', JSON.stringify(previousID));
+    return previousID;
+  }
+  localStorage.setItem('itemID', JSON.stringify(newID));
+  return newID;
 }
 
-document.body.appendChild(component());
+// ADD NEW ITEM
+class AddItem {
+  constructor(ID, chore) {
+    this.ID = ID;
+    this.chore = chore;
+  }
+}
+const add = document.querySelector('#add');
+add.addEventListener('click', () => {
+  const ID = itemID();
+  const chore = document.querySelector('#itemInput').value;
+  const newItem = new AddItem(ID, chore);
+
+  if (chore!== '') {
+    let choresArr = JSON.parse(localStorage.getItem('choresArr'));
+    if (choresArr === null) {
+      choresArr = [];
+    }
+
+    choresArr.push(newItem);
+    localStorage.setItem('choresArr', JSON.stringify(choresArr));
+  }
+    window.print(choresArr);
+});
+  */
