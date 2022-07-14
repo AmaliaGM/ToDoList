@@ -3,18 +3,17 @@
   <head>
     <meta charset="utf-8"/>
    <title>ToDoList</title>
-   <link rel="stylesheet" href="./style.css">
-   <script defer src="/dist/index.bundle.js"></script>
   </head>
   <body>
     <h3 class="form-title">To Do List</h3>
     <form id="todoForm" class="form">
-      <input id="todoInput" type="text" placeholder="chore">
+       <input type="checkbox" class="todoCheckbox" onclick="completeItem()">
+       <input id="todoInput" type="text" placeholder="chore">
 
       
-      <button id="add" type="button" onclick="todoList()">Add</button>
+      <button id="add" type="button">Add</button>
      </form>
-      <ul id="todoList">
+      <ul id="todoList"> 
 
       </ul>
   </body>
