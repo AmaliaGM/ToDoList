@@ -6,15 +6,33 @@
   font-style: normal;
 }
 
-  button {
-    padding: 5px 15px;
-    cursor: pointer;
-    margin-top: 5px;
-  }
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 100%;
+  color: darkslategray;
+  padding: 0;
+  margin: 0%;
+}
 
-  .checkbox {
-    border: solid 5px blueviolet;
-    display:contents;
-    color:blue;
-    background-color: skyblue;
-  }
+.form-title {
+  margin-left: 10%;
+}
+
+.form {
+  margin-left: 10%;
+}
+
+.chore-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.todoList { 
+  padding-left: none;
+  margin-left: none;
+}
+
+li {
+  justify-content: left;
+  list-style: none;
+}

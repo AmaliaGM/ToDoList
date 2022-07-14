@@ -61,17 +61,18 @@ for (var i = 0; i < localStorage.length; i++) {
 
 // ADD NEW ITEM
 class AddItem {
-  constructor(ID, chore) {
+  constructor(ID, chore, complete) {
     this.ID = ID;
     this.chore = chore;
+    this.complete = complete;
   }
 }
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   const ID = itemID();
   const chore = document.querySelector('#todoInput').value;
-  const completed = document.querySelector('.completed')
-  const newItem = new AddItem(ID, chore,completed);
+  const complete = document.querySelector('.completed')
+  const newItem = new AddItem(ID, chore,complete);
 
   if (chore!== '') {
     let choresArr = JSON.parse(localStorage.getItem('choresArr'));
@@ -84,7 +85,7 @@ add.addEventListener('click', () => {
   }
    
 });
-function printChores() {
+ function printChores() {
   const choreList = document.getElementById('todoList');
   const choresArr = JSON.parse(localStorage.getItem('choresArr'));
 
@@ -92,11 +93,12 @@ function printChores() {
     for (let i = 0; i < choresArr.length; i += 1) {
       const chores = `<li id='chore${i}'class='chore'>
       <div class='chore-info'>            
+      <input type="checkbox" class="todoCheckbox">
         <p class='ID'>${choresArr[i].ID}</p>
-        <p> &nbsp by &nbsp </p> 
+        
         <p class='chore'>${choresArr[i].chore}</p>
-        <p> &nbsp by &nbsp </p> 
-        <p class='completed'>${choresArr[i].class}</p>
+       
+        <p class='complete'>complete</p>
       </div>
       <button id="${choresArr[i].class}" class='checked'>Remove</button>
       </li>`;
@@ -106,10 +108,11 @@ function printChores() {
 }
 printChores();
 
-function completeItem() {
+
+/* function completeItem() {
   let checkbox = document.getElementById('todoCheckbox');
   checkbox.addEventListener('click', () => {
     chore.classList.toggle('complete')
   })
 }
-completeItem();
+completeItem(); */
