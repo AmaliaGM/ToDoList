@@ -64,13 +64,13 @@ li {
   margin-right: 10%;
 }
 
-#undefined {
-  padding: 15px 5%;
-  border: none;
-}
-
 .buttonCont {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
 }
