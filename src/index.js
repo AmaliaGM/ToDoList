@@ -11,7 +11,7 @@ class AddItem {
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
-  if(choresArr === null) {
+  if (choresArr === null) {
     choresArr = [];
   }
   const ID = choresArr.length+1;
@@ -39,7 +39,9 @@ function printChores() {
         <p class='complete'>complete</p>
       </div>
       <div class='buttonCont'>
-      <button id="${choresArr[i].ID}" class='remove-btn'><i class="fa-solid fa-trash-can"></i></button>
+      <button id="${choresArr[i].ID}" class='remove-btn'>
+          <i class="fa-solid fa-trash-can"></i>
+          </button>
       </div>
       </li>`;
       choreList.innerHTML += chores;
@@ -56,12 +58,12 @@ element.addEventListener('click', (e) => {
     let choresArr = JSON.parse(localStorage.getItem('choresArr'));
     /* console.log(choresArr); */
     choresArr = choresArr.filter((chores) => chores.ID !== index);
-    for (let i = 0; i < choresArr.length; i+=1){
+    for (let i = 0; i < choresArr.length; i+=1) {
       choresArr[i].ID = i + 1;
     }
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
-    //clearChores();
+    // clearChores();
     printChores();
     document.location.reload();
   }
-  });
+});
