@@ -61,7 +61,6 @@ element.addEventListener('click', (e) => {
     for (let i = 0; i < choresArr.length; i+=1) {
       choresArr[i].ID = i + 1;
     }
-      
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
     // clearChores();
     printChores();
