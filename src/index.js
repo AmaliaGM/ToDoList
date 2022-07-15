@@ -1,53 +1,6 @@
- import './style.css';
+import './style.css';
 
-/* function todoList() {
-  let item = document.getElementById('todoInput.value')
-  let text = document.createTextNode(item);
-  let newItem = document.createElement('li');
-  newItem.appendChild(text);
-  document.getElementById('todoList').appendChild(newItem);
-} */
- //let container = document.querySelector('#todoForm')
- //let bigContainer = document.querySelector('#itemForm')
-/* let chores = {
-  component() {
-    this.choreInput = document.getElementById('itemInput');
-    this.choresList = document.getElementById('choresList');
-    this.choresListChildren = this.choresList.children;
-    this.addButton = document.getElementById('add');
-    this.errorMessage = document.getElementById('error');
-   
-  },
-  buildChore: function() {
-    let choresListItem; let choresCheckbox; let choresValue; let choresButton; let choresTrash;
-    choresListItem = document.createElement('li');
-    choresListItem.setAtribute('class', 'chore');
-
-    choresCheckbox = document.createElement('input');
-    choresCheckbox.classList = 'checkbox';
-    choresCheckbox.setAttribute('type', 'checkbox');
-    choresValue = document.createTextNode(this.choreInput.value);
-    choresButton = document.createElement('button');
-    choresTrash = document.createElement('i');
-    choresTrash.setAttribute('class', 'fa fa-trash');
-    trashButton.appendChild(choresTrash);
-    choresListItem.appendChild(choresCheckbox);
-    choresListItem.appendChild(choresValue);
-    choresListItem.appendChild(choresButton);
-
-    this.choresList.appendChild(choresListItem);
-  },
-
-
-};
-chores[this.choresList] = container.children;
-chores[this.choreInput] = container.children;
-chores[this.addButton] = container.children;
-//bigContainer.appendChild(container);
-for (var i = 0; i < localStorage.length; i++) {
-         apendItem (localStorage.key(i), localStorage.getItem(localStorage.key(i)));
-} */ 
-  function itemID() {
+function itemID() {
   let previousID = JSON.parse(localStorage.getItem('itemID'));
   const newID = previousID + 1;
   if (previousID == null) {
@@ -71,8 +24,8 @@ const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   const ID = itemID();
   const chore = document.querySelector('#todoInput').value;
-  const complete = document.querySelector('.completed')
-  const newItem = new AddItem(ID, chore,complete);
+  const complete = document.querySelector('.completed');
+  const newItem = new AddItem(ID, chore, complete);
 
   if (chore!== '') {
     let choresArr = JSON.parse(localStorage.getItem('choresArr'));
@@ -83,9 +36,8 @@ add.addEventListener('click', () => {
     choresArr.push(newItem);
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
   }
-   
 });
- function printChores() {
+function printChores() {
   const choreList = document.getElementById('todoList');
   const choresArr = JSON.parse(localStorage.getItem('choresArr'));
 
@@ -100,19 +52,13 @@ add.addEventListener('click', () => {
        
         <p class='complete'>complete</p>
       </div>
-      <button id="${choresArr[i].class}" class='checked'>Remove</button>
+      <div class='buttonCont'>
+      <button id="${choresArr[i].class}" class='checked'></button>
+      <i class="fa-solid fa-ellipsis-vertical icon-dots"></i>
+      </div>
       </li>`;
       choreList.innerHTML += chores;
     }
   }
 }
 printChores();
-
-
-/* function completeItem() {
-  let checkbox = document.getElementById('todoCheckbox');
-  checkbox.addEventListener('click', () => {
-    chore.classList.toggle('complete')
-  })
-}
-completeItem(); */

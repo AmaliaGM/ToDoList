@@ -7,32 +7,72 @@
 }
 
 body {
+  background-color: #eee;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 100%;
   color: darkslategray;
   padding: 0;
-  margin: 0%;
+  margin: 100px 0;
+}
+
+.container {
+  background-color: white;
+  box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: auto;
+  border: solid 5px grey;
+  border-radius: 8px;
+  margin: auto;
+
 }
 
 .form-title {
-  margin-left: 10%;
+  padding-left: 50px;
 }
 
 .form {
-  margin-left: 10%;
+  margin-left: 50px;
 }
 
 .chore-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 2%;
 }
 
-ul.todoList { 
+p.ID {
+  display: none;
+}
+
+p.complete {
+  display: none;
+}
+
+input.todoCheckbox {
+  margin-right: 20%;
+}
+
+ul.todoList {
+  display: flex;
   padding-left: none;
   margin-left: none;
+  justify-content: center;
 }
 
 li {
-  justify-content: left;
+  display: flex;
+  justify-content: space-between;
   list-style: none;
+  margin-right: 10%;
+}
+
+#undefined {
+  padding: 15px 5%;
+  border: none;
+}
+
+.buttonCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
