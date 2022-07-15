@@ -1,10 +1,10 @@
 import './style.css';
 import AddItem from './task';
-import { printChores } from './task';
-import { deleteItem } from './task';
+import {printChores} from './task';
+import {deleteItem} from './task';
 
 // ADD NEW ITEM
-AddItem();
+addItem();
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
