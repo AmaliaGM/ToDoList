@@ -23,10 +23,3 @@ add.addEventListener('click', () => {
   printChores();
   // document.location.reload();
 });
-export function clearChores() {
-  const listPlaceholder = document.getElementById('.chores');
-  while (listPlaceholder.firstChild) {
-    listPlaceholder.removeChild(listPlaceholder.firstChild);
-  }
-}
-

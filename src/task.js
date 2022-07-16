@@ -1,5 +1,3 @@
-import {clearChores} from '.';
-
 export default class AddItem {
   constructor(ID, chore, complete = false) {
     this.ID = ID;
@@ -72,7 +70,7 @@ element.addEventListener('click', (e) => {
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
     clearChores();
     printChores();
-    document.location.reload();
+   // document.location.reload();
   }
 });
 
@@ -94,3 +92,11 @@ clrBtn.addEventListener('click', () => {
   }
   localStorage.setItem('todoList', JSON.stringify(choresArr));
 });
+
+function check() {
+  document.getElementById(".todoCheckbox").checked = choresArr.complete(true);
+}
+
+function uncheck() {
+  document.getElementById(".todoChckbox").checked = choresArr.complete(false);
+}
