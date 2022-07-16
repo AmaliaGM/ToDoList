@@ -23,11 +23,10 @@ add.addEventListener('click', () => {
   printChores();
   // document.location.reload();
 });
-function removeAll() {
-  let choresArr = JSON.parse(localStorage.getItem('choresArr'));
-  let button = document.querySelector('#remove-all');
-  button.addEventListener('click', () => {
-    localStorage.clear();
- })
+export function clearChores() {
+  const listPlaceholder = document.getElementById('.chores');
+  while (listPlaceholder.firstChild) {
+    listPlaceholder.removeChild(listPlaceholder.firstChild);
+  }
 }
-removeAll()
+

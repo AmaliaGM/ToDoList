@@ -1,3 +1,5 @@
+import {clearChores} from '.';
+
 export default class AddItem {
   constructor(ID, chore, complete = false) {
     this.ID = ID;
@@ -68,9 +70,9 @@ element.addEventListener('click', (e) => {
       choresArr[i].ID = i + 1;
     }
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
-    // clearChores();
+    clearChores();
     printChores();
-    // document.location.reload();
+    document.location.reload();
   }
 });
 
