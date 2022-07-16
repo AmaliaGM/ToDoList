@@ -12,7 +12,7 @@ add.addEventListener('click', () => {
   }
   const ID = choresArr.length+1;
   const chore = document.getElementById('todoInput').value;
-  const complete = document.querySelector('.completed'); // se usa despues
+
   const newItem = new AddItem(ID, chore);
   console.log(newItem);
 
@@ -21,23 +21,5 @@ add.addEventListener('click', () => {
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
   }
   printChores();
-  //document.location.reload();
+  // document.location.reload();
 });
-
-function myFunction() {
-  const input = document.querySelector('.chore');
-  let chore = document.querySelector('.chore').value;
-
-  input.addEventListener('change', () => {
-    p0
-  });
-
-  document.addEventListener('change', (e) => {
-    input.value = e.target.value;
-  });
-  function saveToLocal() {
-    localStorage.setItem('chore', chore.value);
-  }
-  document.addEventListener('click', saveToLocal);
-}
-myFunction();

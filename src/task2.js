@@ -1,18 +1,18 @@
 export default class AddItem {
-    constructor(ID, chore, complete) {
-      this.ID = ID;
-      this.chore = chore;
-      this.complete = complete === false;
-    }
+  constructor(ID, chore, complete) {
+    this.ID = ID;
+    this.chore = chore;
+    this.complete = complete === false;
   }
+}
 
-  export function printChores() {
-    const choreList = document.getElementById('todoList');
-    const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-  
-    if (choresArr !== null) {
-      for (let i = 0; i < choresArr.length; i += 1) {
-        const chores = `<li id='chore${i}' class='chore'>
+export function printChores() {
+  const choreList = document.getElementById('todoList');
+  const choresArr = JSON.parse(localStorage.getItem('choresArr'));
+
+  if (choresArr !== null) {
+    for (let i = 0; i < choresArr.length; i += 1) {
+      const chores = `<li id='chore${i}' class='chore'>
         <div class='chore-info'>            
         <input type="checkbox" id="todoCheckbox" name="checkbox">
           <input class='chore' value=${choresArr[i].chore}>       
@@ -23,12 +23,12 @@ export default class AddItem {
             </button>
         </div>
         </li>`;
-        choreList.innerHTML += chores;
-      }
-      const checkbox = document.getElementById('todoCheckbox');
-      if (checkbox.checked) {
-       complete === true;
-   }
+      choreList.innerHTML += chores;
+    }
+    const checkbox = document.getElementById('todoCheckbox');
+    if (checkbox.checked) {
+      complete === true;
     }
   }
-  printChores();
+}
+printChores();
