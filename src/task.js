@@ -70,7 +70,7 @@ element.addEventListener('click', (e) => {
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
     clearChores();
     printChores();
-   // document.location.reload();
+    // document.location.reload();
   }
 });
 
@@ -94,9 +94,11 @@ clrBtn.addEventListener('click', () => {
 });
 
 function check() {
-  document.getElementById(".todoCheckbox").checked = choresArr.complete(true);
+  document.getElementById('.todoCheckbox').checked = choresArr.complete(true);
 }
 
 function uncheck() {
-  document.getElementById(".todoChckbox").checked = choresArr.complete(false);
+  document.getElementById('.todoChckbox').checked = choresArr.complete(false);
 }
+check();
+uncheck();
