@@ -23,3 +23,11 @@ add.addEventListener('click', () => {
   printChores();
   // document.location.reload();
 });
+function removeAll() {
+  let choresArr = JSON.parse(localStorage.getItem('choresArr'));
+  let button = document.querySelector('#remove-all');
+  button.addEventListener('click', () => {
+    localStorage.clear();
+ })
+}
+removeAll()
