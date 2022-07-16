@@ -1,7 +1,5 @@
 import './style.css';
-import addItem from './task';
-import {printChores} from './task';
-import {deleteItem} from './task';
+import AddItem from './task';
 
 // ADD NEW ITEM
 
@@ -14,7 +12,7 @@ add.addEventListener('click', () => {
   const ID = choresArr.length+1;
   const chore = document.querySelector('#todoInput').value;
   const complete = document.querySelector('.completed');
-  const newItem = new addItem(ID, chore, complete);
+  const newItem = new AddItem(ID, chore, complete);
 
   if (chore!== '') {
     choresArr.push(newItem);
@@ -23,21 +21,20 @@ add.addEventListener('click', () => {
   document.location.reload();
 });
 
- function myFunction() {
-  
-  let input = document.querySelector(".chore");
-  let chore = document.querySelector(".chore").value;
-  
+function myFunction() {
+  const input = document.querySelector('.chore');
+  let chore = document.querySelector('.chore').value;
+
   input.addEventListener('click', () => {
-    chore = input.value
+    chore = input.value;
   });
 
- document.addEventListener('change', (e) => {
-  input.value = e.target.value
-})
-function saveToLocal() {
-  localStorage.setItem('chore', chore.value);
+  document.addEventListener('change', (e) => {
+    input.value = e.target.value;
+  });
+  function saveToLocal() {
+    localStorage.setItem('chore', chore.value);
+  }
+  document.addEventListener('click', saveToLocal);
 }
-document.addEventListener('click', saveToLocal) 
- }
-
+myFunction();

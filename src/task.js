@@ -1,4 +1,4 @@
-export default class addItem {
+export default class AddItem {
   constructor(ID, chore, complete = false) {
     this.ID = ID;
     this.chore = chore;
