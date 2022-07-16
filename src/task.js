@@ -1,10 +1,18 @@
 export default class AddItem {
-  constructor(ID, chore, complete = false) {
+  constructor(ID, chore, complete) {
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
   }
 }
+function checkedBox(arr) {
+  const checkbox = document.querySelectorAll('.todoCheckbox');
+  for (let i = 0; i < arr.length; i += 1) {
+    arr[i].completed = checkbox[i].checked;
+  }
+  localStorage.setItem('choresList', JSON.stringify(arr));
+}
+
 
 export function printChores() {
   const choreList = document.getElementById('todoList');
@@ -51,3 +59,27 @@ export function deleteItem() {
   });
 }
 deleteItem();
+
+const choresArr = JSON.parse(localStorage.getItem('choresArr'));
+const chores = document.querySelector('.chore')
+const clrBtn = document.getElementById('remove-all');
+clrBtn.addEventListener('click', () => {
+  for (let i = 0; i < choresArr.length; i += 1) {
+    if (choresArr[i].completed) {
+      choresArr.splice(i, 1);
+      choresArr.forEach((chores) => {
+        if (chores.index > i) {
+          chores.index -= 1;
+        }
+      });
+      i -= 1;
+    }
+  }
+  localStorage.setItem('todoList', JSON.stringify(choresArr));
+});
+
+/* var editChores = document.querySelector('.chores');
+localStorage.setItem('editChores', JSON.stringify(editChores));
+var retrieveChore = localStorage.getItem('editChores');
+console.log('retrieveChore:', JSON.parse(retrieveChore));
+ */

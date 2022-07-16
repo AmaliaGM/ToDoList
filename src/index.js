@@ -25,8 +25,8 @@ function myFunction() {
   const input = document.querySelector('.chore');
   let chore = document.querySelector('.chore').value;
 
-  input.addEventListener('click', () => {
-    chore = input.value;
+  input.addEventListener('change', () => {
+    p0
   });
 
   document.addEventListener('change', (e) => {
