@@ -15,9 +15,7 @@ export default class AddItem {
         const chores = `<li id='chore${i}' class='chore'>
         <div class='chore-info'>            
         <input type="checkbox" id="todoCheckbox" name="checkbox">
-          <p class='ID'>${choresArr[i].ID}</p>
           <input class='chore' value=${choresArr[i].chore}>       
-          <p class='complete' value=false>${choresArr[i].complete}</p>
         </div>
         <div class='buttonCont'> 
         <button id="${choresArr[i].ID}" class='remove-btn'>

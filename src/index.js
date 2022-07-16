@@ -1,5 +1,6 @@
 import './style.css';
 import AddItem from './task';
+import {printChores} from './task';
 
 // ADD NEW ITEM
 
@@ -10,15 +11,17 @@ add.addEventListener('click', () => {
     choresArr = [];
   }
   const ID = choresArr.length+1;
-  const chore = document.querySelector('#todoInput').value;
-  const complete = document.querySelector('.completed');
-  const newItem = new AddItem(ID, chore, complete);
+  const chore = document.getElementById('todoInput').value;
+  const complete = document.querySelector('.completed'); // se usa despues
+  const newItem = new AddItem(ID, chore);
+  console.log(newItem);
 
   if (chore!== '') {
     choresArr.push(newItem);
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
   }
-  document.location.reload();
+  printChores();
+  //document.location.reload();
 });
 
 function myFunction() {
