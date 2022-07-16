@@ -16,7 +16,7 @@ export function printChores() {
     <div class='chore-info'>            
     <input type="checkbox" class="todoCheckbox">
         <p class='ID'>${choresArr[i].ID}</p>
-        <p class='chore'>${choresArr[i].chore}</p>       
+        <input type='text' class='chore' placeholder=${choresArr[i].chore}/>
         <p class='complete'>complete</p>
     </div>
     <div class='buttonCont'>
