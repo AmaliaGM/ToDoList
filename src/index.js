@@ -40,17 +40,4 @@ function saveToLocal() {
 }
 document.addEventListener('click', saveToLocal) 
  }
-/*let chore = document.querySelector(".chore");
-let holder = document.setAttribute("placeholder")
-chore.addEventListener('click', (e) => {
-  if (e.target.tagName === 'INPUT' && e.target.classList.contains('chore')) {
-    const chore = e.target;
-    let index = [...chore.classList];
-    index = index[index.length - 1];
-    chore.addEventListener('keydown', (e) => {
-      if (e.keyCode === 13 && chore.value !== '') {
-        editTask(chore.value, index);
-      }
-    });
-  }
-});*/
+
