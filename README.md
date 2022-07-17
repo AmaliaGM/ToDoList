@@ -14,6 +14,10 @@
 
 ## Getting Started
 
+git clone git@github.com:AmaliaGM/ToDoList.git
+cd ToDoList
+npm install (install all packages used for this project)
+npm start (starts the development server)
 To get a local copy up and running follow these simple example steps:
 
 - Clone this repo to your computer using git.
