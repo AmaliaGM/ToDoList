@@ -55,6 +55,11 @@ function updateDescription() {
   );
 }
 
+function deleteItems() {
+  localStorage.clear();
+}
+let removeBut = document.getElementById('remove-all');
+removeBut.addEventListener('click', deleteItems())
 
 const element = document.querySelector('#todoList');
 element.addEventListener('click', (e) => {
@@ -73,32 +78,3 @@ element.addEventListener('click', (e) => {
     // document.location.reload();
   }
 });
-
-
-const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-
-const clrBtn = document.getElementById('remove-all');
-clrBtn.addEventListener('click', () => {
-  for (let i = 0; i < choresArr.length; i += 1) {
-    if (choresArr[i].completed) {
-      choresArr.splice(i, 1);
-      choresArr.forEach((chores) => {
-        if (chores.index > i) {
-          chores.index -= 1;
-        }
-      });
-      i -= 1;
-    }
-  }
-  localStorage.setItem('todoList', JSON.stringify(choresArr));
-});
-
-function check() {
-  document.getElementById('.todoCheckbox').checked = choresArr.complete(true);
-}
-
-function uncheck() {
-  document.getElementById('.todoChckbox').checked = choresArr.complete(false);
-}
-check();
-uncheck();

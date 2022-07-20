@@ -21,11 +21,13 @@
       <ul id="todoList">
         <!--aqui se inserta el html de las nuevas tareas-->
       </ul>
-      <button type="button" id="remove-all" class="list-foot">
-        <p>
-          Remove all 
-        </p>
-      </button> 
+      <button id="remove-all" onclick="deleteItems()">
+        Remove all </button> 
+        <script>
+         function deleteItems() {
+   localStorage.clear();
+ }
+        </script>
     </div>
   </body>
 </html>
