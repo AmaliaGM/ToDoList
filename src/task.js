@@ -1,7 +1,7 @@
 import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 export default class AddItem {
-  constructor(ID, chore, complete = false) {
+  constructor(ID, chore, complete) {
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
@@ -17,11 +17,11 @@ export function printChores() {
     for (let i = 0; i < choresArr.length; i += 1) {
       const chores = `<li id='chore${i}'class='chore'>
     <div class='chore-info'>            
-    <input type="checkbox" class="todoCheckbox">
+    <input type="checkbox" id="todoCheckbox">
         <p class='ID'>${choresArr[i].ID}</p>
         <input type='text' data-index='${choresArr[i].ID}' 
               class='chore' value='${choresArr[i].chore}'/>
-        <p class='complete' value=false>complete</p>
+        <p class='complete'>complete</p>
     </div>
     <div class='buttonCont'>
     <button id="${choresArr[i].ID}" class='remove-btn'>
@@ -36,10 +36,10 @@ export function printChores() {
 }
 // printChores();
 
-let chores = document.querySelector('todoList')
+/* let chores = document.querySelector('todoList')
 let li = document.createElement('li')
 li.classList = 'chore'
-let check = document.createElement('input')
+let check = document.querySelectorAll('check')
 check.setAttribute('type', 'checkbox')
 check.classList = 'check'
 chores.appendChild(check)
@@ -53,14 +53,7 @@ let complete = document.createElement('input')
 complete.classList = 'complete'
 chores.appendChild(complete)
 chores.appendChild(li)
-
-for (let i = 0;i< choresArr.length; i++) {
-  if(choresArr !== null){
-    if (check.checked) {
-  complete.value === true;
-    }
-  }
-}
+ */
 
 let choresArr = JSON.parse(localStorage.getItem('choresArr'));
 function resetAll() {
@@ -113,20 +106,3 @@ element.addEventListener('click', (e) => {
     // document.location.reload();
   }
 });
-
-/* 
-const clrBtn = document.getElementById('remove-all');
-clrBtn.addEventListener('click', () => {
-  for (let i = 0; i < choresArr.length; i += 1) {
-    if (choresArr[i].completed) {
-      choresArr.splice(i, 1);
-      choresArr.forEach((chores) => {
-        if (chores.index > i) {
-          chores.index -= 1;
-        }
-      });
-      i -= 1;
-    }
-  }
-  localStorage.setItem('todoList', JSON.stringify(choresArr));
-}); */

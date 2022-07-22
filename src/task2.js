@@ -27,10 +27,16 @@ export default class AddItem {
         </li>`;
         choreList.innerHTML += chores;
       }
-      const checkbox = document.getElementById('todoCheckbox');
-      if (checkbox.checked) {
-       complete === true;
-   }
+     }
     }
-  }
+  
   printChores();
+
+  const choresArr = JSON.parse(localStorage.getItem('choresArr'));
+  const checkbox = document.getElementById('todoCheckbox');
+
+    for (let i=0; i < choresArr.length;i+=1){
+    if (checkbox.checked == true) {
+    document.querySelector('.complete').value = true;
+    }
+    }

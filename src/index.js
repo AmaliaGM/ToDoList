@@ -1,7 +1,5 @@
 import './style.css';
 import AddItem from './task2';
-import { clearChores } from './task';
-import { printChores } from './task2';
 
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
