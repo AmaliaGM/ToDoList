@@ -1,10 +1,11 @@
 // import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 export default class AddItem {
-  constructor(ID, chore, complete = false) {
+  constructor(ID, chore, complete, check) {
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
+    this.check = check;
   }
 }
 
@@ -55,14 +56,21 @@ li.appendChild(complete)
 chores.appendChild(li) */
 
 const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-const checkbox = document.getElementById('todoCheckbox');
-if (choresArr != null) {
-  for (let i=0; i < choresArr.length;i+=1){
-  if (checkbox.checked == true) {
-  document.querySelector('.complete').value = true;
-  }
+const checkbox = document.querySelector('.todoCheckbox');
+
+for (var i = 0; i < choresArr.length; i++) {
+  // Check if the element is a checkbox.
+  if (choresArr[i].className == 'todoCheckbox' && choresArr[i].type == 'checkbox') {
+      // Finally, check if the checkbox is checked.
+      if (chore[i].checked) {
+          alert(choresArr[i].value + ' is checked!');
+      }
   }
 }
+
+ /*  if (checkbox = true) {
+    */
+  //document.querySelector('.complete').value = true;
 
 function resetAll() {
   if(choresArr !== null) {
