@@ -1,4 +1,4 @@
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
+// import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 export default class AddItem {
   constructor(ID, chore, complete = false) {
@@ -36,33 +36,34 @@ export function printChores() {
 }
 // printChores();
 
-let chores = document.querySelector('todoList')
+/* let chores = document.querySelector('todoList')
 let li = document.createElement('li')
 li.classList = 'chore'
 let check = document.createElement('input')
 check.setAttribute('type', 'checkbox')
 check.classList = 'check'
-chores.appendChild(check)
+li.appendChild(check)
 let id = document.createElement('p')
 id.classList = 'ID'
-chores.appendChild(id)
+li.appendChild(id)
 let chore = document.createElement('input')
 chore.classList = 'chore'
-chores.appendChild(chore)
+li.appendChild(chore)
 let complete = document.createElement('input')
 complete.classList = 'complete'
-chores.appendChild(complete)
-chores.appendChild(li)
+li.appendChild(complete)
+chores.appendChild(li) */
 
-for (let i = 0;i< choresArr.length; i++) {
-  if(choresArr !== null){
-    if (check.checked) {
-  complete.value === true;
-    }
+const choresArr = JSON.parse(localStorage.getItem('choresArr'));
+const checkbox = document.getElementById('todoCheckbox');
+if (choresArr != null) {
+  for (let i=0; i < choresArr.length;i+=1){
+  if (checkbox.checked == true) {
+  document.querySelector('.complete').value = true;
+  }
   }
 }
 
-let choresArr = JSON.parse(localStorage.getItem('choresArr'));
 function resetAll() {
   if(choresArr !== null) {
   for (let i = 0; i < choresArr.length; i++){
@@ -113,20 +114,3 @@ element.addEventListener('click', (e) => {
     // document.location.reload();
   }
 });
-
-/* 
-const clrBtn = document.getElementById('remove-all');
-clrBtn.addEventListener('click', () => {
-  for (let i = 0; i < choresArr.length; i += 1) {
-    if (choresArr[i].completed) {
-      choresArr.splice(i, 1);
-      choresArr.forEach((chores) => {
-        if (chores.index > i) {
-          chores.index -= 1;
-        }
-      });
-      i -= 1;
-    }
-  }
-  localStorage.setItem('todoList', JSON.stringify(choresArr));
-}); */
