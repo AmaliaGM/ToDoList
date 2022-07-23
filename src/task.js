@@ -32,7 +32,6 @@ export function printChores() {
     </li>`;
       choreList.innerHTML += chores;
     }
-    
     updateDescription();
   }
 }
