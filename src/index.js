@@ -44,6 +44,6 @@ document.querySelectorAll('.todoCheckbox').forEach((element) => {
 const check = document.querySelectorAll('.todoCheckbox');
 if (check.checked == true) {
   document.querySelectorAll('.todoCheckbox').forEach((check) => {
-    check.addEventListener('click', toggle());
+    check.addEventListener('click', completeTrue());
   });
 }

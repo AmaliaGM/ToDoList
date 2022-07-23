@@ -32,7 +32,7 @@ export function printChores() {
     </li>`;
       choreList.innerHTML += chores;
     }
-    toggle();
+    
     updateDescription();
   }
 }
