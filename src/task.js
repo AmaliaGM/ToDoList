@@ -1,5 +1,5 @@
 // import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
-import { toggle } from ".";
+import {toggle} from '.';
 export default class AddItem {
   constructor(ID, chore, complete) {
     this.ID = ID;
@@ -20,8 +20,9 @@ export function printChores() {
     <input type="checkbox" class="todoCheckbox">
         <p class='ID'>${choresArr[i].ID}</p>
         <input type='text' data-index='${choresArr[i].ID}' 
-              class='chore' value='${choresArr[i].chore}'/>
-        <input class='complete'data-index='${choresArr[i].ID} value='false'>complete</input>
+          class='chore' value='${choresArr[i].chore}'/>
+        <input class='complete'data-index='${choresArr[i].ID} 
+        value='false'>complete</input>
     </div>
     <div class='buttonCont'>
     <button id="${choresArr[i].ID}" class='remove-btn'>
@@ -37,34 +38,35 @@ export function printChores() {
 }
 // printChores();
 
-function completeTrue() {
-const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-const checkbox = document.querySelector('.todoCheckbox');
-let complete = document.getElementsByTagName('input.complete')
+export function completeTrue() {
+  const choresArr = JSON.parse(localStorage.getItem('choresArr'));
+  // const checkbox = document.querySelector('.todoCheckbox');
+  const complete = document.getElementsByTagName('input.complete');
 
-for (var i = 0; i < choresArr.length; i++) {
-  // Check if the element is a checkbox.
-  if (choresArr[i].className == 'todoCheckbox' && choresArr[i].type == 'checkbox') {
+  for (let i = 0; i < choresArr.length; i++) {
+    // Check if the element is a checkbox.
+    if (choresArr[i].className == 'todoCheckbox' &&
+    choresArr[i].type == 'checkbox') {
       // Finally, check if the checkbox is checked.
       if (chore[i].checked) {
-          complete.value == true;
+        complete.value == true;
       }
+    }
   }
 }
-}
- /*  if (checkbox = true) {
+/*  if (checkbox = true) {
     */
-  //document.querySelector('.complete').value = true;
+// document.querySelector('.complete').value = true;
 
 export function resetAll() {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
-   if(choresArr !== null) {
-  for (let i = 0; i < choresArr.length; i++){
+  if (choresArr !== null) {
+    for (let i = 0; i < choresArr.length; i++) {
       choresArr = [];
-   /*  localStorage.clear(); */
+      /*  localStorage.clear(); */
+    }
+    localStorage.setItem('choresArr', JSON.stringify(choresArr));
   }
-  localStorage.setItem('choresArr', JSON.stringify(choresArr));
-}
 }
 
 function updateDescription() {
