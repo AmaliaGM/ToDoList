@@ -75,6 +75,11 @@ li {
   border: none;
 }
 
+#remove-all {
+  margin-left: 44px;
+  align-self: center;
+}
+
 .chore {
   border: none;
 }

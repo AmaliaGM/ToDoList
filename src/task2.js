@@ -14,7 +14,7 @@ export function printChores() {
     for (let i = 0; i < choresArr.length; i += 1) {
       const chores = `<li id='chore${i}' class='chore'>
         <div class='chore-info'>            
-        <input type="checkbox" id="todoCheckbox" name="checkbox">
+        <input type="checkbox" class="todoCheckbox" name="checkbox">
           <input class='chore' value=${choresArr[i].chore}>       
         </div>
         <div class='buttonCont'> 
