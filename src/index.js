@@ -29,6 +29,7 @@ add.addEventListener('click', () => {
   // document.location.reload();
 });
 
+
 document.querySelectorAll('.todoCheckbox').forEach((element) => {
   element.addEventListener('click', completeTrue());
 });
