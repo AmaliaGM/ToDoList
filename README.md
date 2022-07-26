@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do List
+# [To Do List](https://amaliagm.github.io/ToDoList/)
 
 >This is an app where you can add your every day chores while keeping them in order and delete them whenever you want.  Does not occupy space since it's storaged in browser. 
 
