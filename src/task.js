@@ -1,5 +1,7 @@
+// import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
+// import {toggle} from '.';
 export default class AddItem {
-  constructor(ID, chore, complete = false) {
+  constructor(ID, chore, complete) {
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
@@ -18,8 +20,9 @@ export function printChores() {
     <input type="checkbox" class="todoCheckbox">
         <p class='ID'>${choresArr[i].ID}</p>
         <input type='text' data-index='${choresArr[i].ID}' 
-              class='chore' value='${choresArr[i].chore}'/>
-        <p class='complete'>complete</p>
+          class='chore' value='${choresArr[i].chore}'/>
+        <input class='complete'data-index='${choresArr[i].ID} 
+        value='false'>complete</input>
     </div>
     <div class='buttonCont'>
     <button id="${choresArr[i].ID}" class='remove-btn'>
@@ -33,6 +36,37 @@ export function printChores() {
   }
 }
 // printChores();
+
+export function completeTrue() {
+  const choresArr = JSON.parse(localStorage.getItem('choresArr'));
+  // const checkbox = document.querySelector('.todoCheckbox');
+  const complete = document.getElementsByTagName('input.complete');
+
+  for (let i = 0; i < choresArr.length; i++) {
+    // Check if the element is a checkbox.
+    if (choresArr[i].className == 'todoCheckbox' &&
+    choresArr[i].type == 'checkbox') {
+      // Finally, check if the checkbox is checked.
+      if (chore[i].checked) {
+        complete.value == true;
+      }
+    }
+  }
+}
+/*  if (checkbox = true) {
+    */
+// document.querySelector('.complete').value = true;
+
+export function resetAll() {
+  let choresArr = JSON.parse(localStorage.getItem('choresArr'));
+  if (choresArr !== null) {
+    for (let i = 0; i < choresArr.length; i++) {
+      choresArr = [];
+      /*  localStorage.clear(); */
+    }
+    localStorage.setItem('choresArr', JSON.stringify(choresArr));
+  }
+}
 
 function updateDescription() {
   const input = document.querySelectorAll('input.chore');
@@ -55,7 +89,6 @@ function updateDescription() {
   );
 }
 
-
 const element = document.querySelector('#todoList');
 element.addEventListener('click', (e) => {
   if (e.target.className === 'fa-solid fa-trash-can') {
@@ -74,21 +107,20 @@ element.addEventListener('click', (e) => {
   }
 });
 
-
-const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-
-const clrBtn = document.getElementById('remove-all');
-clrBtn.addEventListener('click', () => {
-  for (let i = 0; i < choresArr.length; i += 1) {
-    if (choresArr[i].completed) {
-      choresArr.splice(i, 1);
-      choresArr.forEach((chores) => {
-        if (chores.index > i) {
-          chores.index -= 1;
-        }
-      });
-      i -= 1;
-    }
-  }
-  localStorage.setItem('todoList', JSON.stringify(choresArr));
-});
+/* let chores = document.querySelector('todoList')
+let li = document.createElement('li')
+li.classList = 'chore'
+let check = document.createElement('input')
+check.setAttribute('type', 'checkbox')
+check.classList = 'check'
+li.appendChild(check)
+let id = document.createElement('p')
+id.classList = 'ID'
+li.appendChild(id)
+let chore = document.createElement('input')
+chore.classList = 'chore'
+li.appendChild(chore)
+let complete = document.createElement('input')
+complete.classList = 'complete'
+li.appendChild(complete)
+chores.appendChild(li) */
