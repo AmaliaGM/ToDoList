@@ -32,7 +32,7 @@ export function printChores() {
     updateDescription();
   }
 }
- printChores();
+printChores();
 
 export function completeTrue() {
   const choresArr = JSON.parse(localStorage.getItem('choresArr'));
