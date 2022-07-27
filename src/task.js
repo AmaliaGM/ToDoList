@@ -1,5 +1,3 @@
-// import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
-// import {toggle} from '.';
 export default class AddItem {
   constructor(ID, chore, complete) {
     this.ID = ID;
@@ -11,7 +9,6 @@ export default class AddItem {
 export function printChores() {
   const choreList = document.getElementById('todoList');
   const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-
   if (choresArr !== null) {
     choreList.innerHTML = '';
     for (let i = 0; i < choresArr.length; i += 1) {
@@ -35,13 +32,11 @@ export function printChores() {
     updateDescription();
   }
 }
-// printChores();
+ printChores();
 
 export function completeTrue() {
   const choresArr = JSON.parse(localStorage.getItem('choresArr'));
-  // const checkbox = document.querySelector('.todoCheckbox');
   const complete = document.getElementsByTagName('input.complete');
-
   for (let i = 0; i < choresArr.length; i++) {
     // Check if the element is a checkbox.
     if (choresArr[i].className == 'todoCheckbox' &&
@@ -53,16 +48,12 @@ export function completeTrue() {
     }
   }
 }
-/*  if (checkbox = true) {
-    */
-// document.querySelector('.complete').value = true;
 
 export function resetAll() {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
   if (choresArr !== null) {
     for (let i = 0; i < choresArr.length; i++) {
       choresArr = [];
-      /*  localStorage.clear(); */
     }
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
   }
@@ -95,32 +86,11 @@ element.addEventListener('click', (e) => {
     const index = parseInt(e.target.parentElement.id, 10);
     console.log(index);
     let choresArr = JSON.parse(localStorage.getItem('choresArr'));
-    /* console.log(choresArr); */
     choresArr = choresArr.filter((chores) => chores.ID !== index);
     for (let i = 0; i < choresArr.length; i+=1) {
       choresArr[i].ID = i + 1;
     }
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
-    // clearChores();
     printChores();
-    // document.location.reload();
   }
 });
-
-/* let chores = document.querySelector('todoList')
-let li = document.createElement('li')
-li.classList = 'chore'
-let check = document.createElement('input')
-check.setAttribute('type', 'checkbox')
-check.classList = 'check'
-li.appendChild(check)
-let id = document.createElement('p')
-id.classList = 'ID'
-li.appendChild(id)
-let chore = document.createElement('input')
-chore.classList = 'chore'
-li.appendChild(chore)
-let complete = document.createElement('input')
-complete.classList = 'complete'
-li.appendChild(complete)
-chores.appendChild(li) */
