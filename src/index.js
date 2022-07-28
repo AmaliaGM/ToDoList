@@ -13,10 +13,10 @@ add.addEventListener('click', () => {
   if (choresArr === null) {
     choresArr = [];
   }
+  const checkbox = complete(false);
   const ID = choresArr.length+1;
   const chore = document.getElementById('todoInput').value;
-  const complete = false;
-  const newItem = new AddItem(ID, chore, complete);
+  const newItem = new AddItem(ID, chore, checkbox);
   console.log(newItem);
 
   if (chore!== '') {
@@ -25,7 +25,6 @@ add.addEventListener('click', () => {
   }
   printChores();
 });
-
 
 document.querySelectorAll('.todoCheckbox').forEach((element) => {
   element.addEventListener('click', completeTrue());

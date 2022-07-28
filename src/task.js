@@ -14,12 +14,10 @@ export function printChores() {
     for (let i = 0; i < choresArr.length; i += 1) {
       const chores = `<li id='chore${i}'class='chore'>
     <div class='chore-info'>            
-    <input type="checkbox" class="todoCheckbox">
+    <input type="checkbox" class="todoCheckbox" value="complete">
         <p class='ID'>${choresArr[i].ID}</p>
         <input type='text' data-index='${choresArr[i].ID}' 
           class='chore' value='${choresArr[i].chore}'/>
-        <input class='complete'data-index='${choresArr[i].ID} 
-        value='false'>complete</input>
     </div>
     <div class='buttonCont'>
     <button id="${choresArr[i].ID}" class='remove-btn'>
