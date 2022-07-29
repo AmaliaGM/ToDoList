@@ -1,11 +1,3 @@
-export default class AddItem {
-  constructor(ID, chore, complete) {
-    this.ID = ID;
-    this.chore = chore;
-    this.complete = complete;
-  }
-}
-
 export function printChores() {
   const choreList = document.getElementById('todoList');
   const choresArr = JSON.parse(localStorage.getItem('choresArr'));
@@ -14,11 +6,12 @@ export function printChores() {
     for (let i = 0; i < choresArr.length; i += 1) {
       const chores = `<li id='chore${i}'class='chore'>
     <div class='chore-info'>            
-    <input type="checkbox" class="todoCheckbox" value="complete">
+    <input type="checkbox" class="todoCheckbox" value="false">
         <p class='ID'>${choresArr[i].ID}</p>
         <input type='text' data-index='${choresArr[i].ID}' 
           class='chore' value='${choresArr[i].chore}'/>
-    </div>
+          <p class='complete'>${choresArr[i].complete}</p>
+        </div>
     <div class='buttonCont'>
     <button id="${choresArr[i].ID}" class='remove-btn'>
         <i class="fa-solid fa-trash-can"></i>

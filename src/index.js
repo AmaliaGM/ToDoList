@@ -1,5 +1,5 @@
+// import { convertToObject } from 'typescript';
 import './style.css';
-import AddItem from './task';
 import {printChores, resetAll, completeTrue} from './task';
 
 // delete all
@@ -7,17 +7,25 @@ const deleteAll = document.getElementById('remove-all');
 deleteAll.addEventListener('click', resetAll());
 
 // ADD NEW ITEM
+class AddItem {
+  constructor(ID, chore, complete = false) {
+    
+    this.ID = ID;
+    this.chore = chore;
+    this.complete = complete;
+  }
+}
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
   if (choresArr === null) {
     choresArr = [];
   }
-  const checkbox = complete(false);
+  
   const ID = choresArr.length+1;
   const chore = document.getElementById('todoInput').value;
-  const newItem = new AddItem(ID, chore, checkbox);
-  console.log(newItem);
+  const complete = document.querySelectorAll('.complete');
+  const newItem = new AddItem(ID, chore, complete);
 
   if (chore!== '') {
     choresArr.push(newItem);
