@@ -52,5 +52,5 @@ if (check.checked == true) {
   });
 }
 
-  module.exports = AddItem;
+ 
   

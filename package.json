@@ -6,8 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "jest",
+    "test:cobertura": "jest --coverage",
     "build": "webpack",
     "start": "webpack serve --open"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "repository": {
     "type": "module",
@@ -22,6 +29,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^6.7.1",
     "eslint": "^8.19.0",
     "eslint-config-google": "^0.14.0",
@@ -46,5 +54,6 @@
     "lodash": "^4.17.21",
     "typescript": "^4.7.4"
   },
-  "main": ".eslintrc.js"
+  "main": ".eslintrc.js",
+  "keywords": []
 }
