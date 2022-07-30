@@ -85,3 +85,5 @@ element.addEventListener('click', (e) => {
     printChores();
   }
 });
+
+  module.exports = printChores;

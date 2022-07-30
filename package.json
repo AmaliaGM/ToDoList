@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/AmaliaGM/ToDoList.git"
   },
   "author": "",
