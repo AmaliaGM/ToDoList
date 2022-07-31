@@ -13,7 +13,6 @@ export class AddItem {
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
-
   }
 }
 
