@@ -16,7 +16,7 @@ export class AddItem {
     this.complete = complete;
   }
 }
- function addItem() {
+ 
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
@@ -43,7 +43,7 @@ add.addEventListener('click', () => {
   }
   printChores();
 });
- }
+ 
 
 const check = document.querySelectorAll('.todoCheckbox');
 if (check.checked == true) {
@@ -51,6 +51,3 @@ if (check.checked == true) {
     check.addEventListener('click', completeTrue());
   });
 }
-
- 
-  

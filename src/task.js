@@ -71,7 +71,6 @@ function updateDescription() {
   );
 }
 
-function deleteItem() {
 const element = document.querySelector('#todoList');
 element.addEventListener('click', (e) => {
   if (e.target.className === 'fa-solid fa-trash-can') {
@@ -86,5 +85,4 @@ element.addEventListener('click', (e) => {
     printChores();
   }
 });
-}
  

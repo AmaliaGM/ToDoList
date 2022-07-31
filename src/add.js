@@ -1,6 +1,14 @@
-function addItem() {
-    const add = document.querySelector('#add');
-    add.addEventListener('click', () => {
+class AddItem {
+  constructor(ID, chore, complete) {
+    
+    this.ID = ID;
+    this.chore = chore;
+    this.complete = complete;
+  }
+}
+function addItem(ID, chore, complete) {
+    const addBt = document.querySelector('#add');
+    addBt.addEventListener('click', () => {
       let choresArr = JSON.parse(localStorage.getItem('choresArr'));
       if (choresArr === null) {
         choresArr = [];
@@ -10,13 +18,13 @@ function addItem() {
       const chore = document.getElementById('todoInput').value;
       const complete = document.querySelectorAll('.complete');
       const newItem = new AddItem(ID, chore, complete.value == false);
-    
+    /* 
       document.querySelectorAll('.todoCheckbox').forEach((element) => {
         element.addEventListener('click', () => {
           for(let i=0; i < choresArr.length; i++) {
             choresArr[i].complete == true;
           }
-        });
+        }); */
       });
     
       if (chore!== '') {
@@ -24,7 +32,6 @@ function addItem() {
         localStorage.setItem('choresArr', JSON.stringify(choresArr));
       }
       printChores();
-    });
-     }
+    };
 
-     module.exports = addItem;
+     module.exports = AddItem;
