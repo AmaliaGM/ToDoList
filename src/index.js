@@ -7,12 +7,13 @@ console.log('hola');
 const deleteAll = document.getElementById('remove-all');
 deleteAll.addEventListener('click', resetAll());
 
-// ADD NEW ITEM
+// ADD
 export class AddItem {
   constructor(ID, chore, complete) {
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
+
   }
 }
 
