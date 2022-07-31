@@ -29,7 +29,7 @@ add.addEventListener('click', () => {
   const newItem = new AddItem(ID, chore, complete.value == false);
 
   document.querySelectorAll('.todoCheckbox').forEach((element) => {
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (comopleteTrue)) ;
       function completeTrue() {
         choresArr.forEach((chore) => {
           if (chore.title === title) {
@@ -38,8 +38,7 @@ add.addEventListener('click', () => {
           }
         });
       }
-    });
-  });
+    
   completeTrue();
 
   if (chore!== '') {
