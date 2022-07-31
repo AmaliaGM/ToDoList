@@ -19,5 +19,5 @@ function updateDescription() {
   );
 }
 
-  module.exports = updateDescription;
-  
+module.exports = updateDescription;
+

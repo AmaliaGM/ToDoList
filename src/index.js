@@ -1,8 +1,8 @@
 // import { convertToObject } from 'typescript';
- import './style.css';
+import './style.css';
 import {printChores, resetAll, completeTrue} from './task.js';
 
-console.log("hola")
+console.log('hola');
 // delete all
 const deleteAll = document.getElementById('remove-all');
 deleteAll.addEventListener('click', resetAll());
@@ -10,20 +10,19 @@ deleteAll.addEventListener('click', resetAll());
 // ADD NEW ITEM
 export class AddItem {
   constructor(ID, chore, complete) {
-    
     this.ID = ID;
     this.chore = chore;
     this.complete = complete;
   }
 }
- 
+
 const add = document.querySelector('#add');
 add.addEventListener('click', () => {
   let choresArr = JSON.parse(localStorage.getItem('choresArr'));
   if (choresArr === null) {
     choresArr = [];
   }
-  
+
   const ID = choresArr.length+1;
   const chore = document.getElementById('todoInput').value;
   const complete = document.querySelectorAll('.complete');
@@ -31,26 +30,25 @@ add.addEventListener('click', () => {
 
   document.querySelectorAll('.todoCheckbox').forEach((element) => {
     element.addEventListener('click', () => {
-          function completeTrue() {
-          let completeFound = false;
-          this.choresArr.forEach((chore) => {
-              if (chore.title === title) {
-                  chore.completed = true;
-                  completeFound = true;
-                  return;
-              }
-          });
-      }   
+      function completeTrue() {
+        choresArr.forEach((chore) => {
+          if (chore.title === title) {
+            chore.completed = true;
+            return;
+          }
+        });
+      }
     });
   });
-  
+  completeTrue();
+
   if (chore!== '') {
     choresArr.push(newItem);
     localStorage.setItem('choresArr', JSON.stringify(choresArr));
   }
   printChores();
 });
- 
+
 
 const check = document.querySelectorAll('.todoCheckbox');
 if (check.checked == true) {
