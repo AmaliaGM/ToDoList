@@ -2,7 +2,7 @@
 import './style.css';
 import {printChores, resetAll} from './task.js';
 
-console.log('hola');
+
 // delete all
 const deleteAll = document.getElementById('remove-all');
 deleteAll.addEventListener('click', resetAll());
