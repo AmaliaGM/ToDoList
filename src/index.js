@@ -1,6 +1,6 @@
 // import { convertToObject } from 'typescript';
 import './style.css';
-import {printChores, resetAll, completeTrue} from './task.js';
+import {printChores, resetAll} from './task.js';
 
 console.log('hola');
 // delete all
@@ -29,29 +29,30 @@ add.addEventListener('click', () => {
   const newItem = new AddItem(ID, chore, complete.value == false);
 
   document.querySelectorAll('.todoCheckbox').forEach((element) => {
-    element.addEventListener('click', (comopleteTrue)) ;
-      function completeTrue() {
-        choresArr.forEach((chore) => {
-          if (chore.title === title) {
-            chore.completed = true;
-            return;
-          }
-        });
-      }
-    
-  completeTrue();
+    element.addEventListener('click', (completeTrue));
+    function completeTrue() {
+      choresArr.forEach((chore) => {
+        if (chore.title === title) {
+          chore.completed = true;
+          return;
+        }
+      });
+    }
 
-  if (chore!== '') {
-    choresArr.push(newItem);
-    localStorage.setItem('choresArr', JSON.stringify(choresArr));
-  }
-  printChores();
+
+    if (chore!== '') {
+      choresArr.push(newItem);
+      localStorage.setItem('choresArr', JSON.stringify(choresArr));
+    }
+    printChores();
+  });
 });
 
 
-const check = document.querySelectorAll('.todoCheckbox');
+/* const check = document.querySelectorAll('.todoCheckbox');
 if (check.checked == true) {
   document.querySelectorAll('.todoCheckbox').forEach((check) => {
     check.addEventListener('click', completeTrue());
   });
 }
+*/
