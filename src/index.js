@@ -31,9 +31,16 @@ add.addEventListener('click', () => {
 
   document.querySelectorAll('.todoCheckbox').forEach((element) => {
     element.addEventListener('click', () => {
-      for(let i=0; i < choresArr.length; i++) {
-        choresArr[i].complete == true;
-      }
+          function completeTrue() {
+          let completeFound = false;
+          this.choresArr.forEach((chore) => {
+              if (chore.title === title) {
+                  chore.completed = true;
+                  completeFound = true;
+                  return;
+              }
+          });
+      }   
     });
   });
   
